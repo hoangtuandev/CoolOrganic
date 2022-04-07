@@ -1,0 +1,208 @@
+$mainColor: #00ae4a;
+
+.box {
+    z-index: 99;
+    background-color: rgba(148, 148, 148, 0.7);
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .buttonClose {
+        position: absolute;
+        right: 0px;
+
+        button {
+            border: 0px solid #00ae4a;
+            border-top-right-radius: 15px;
+            border-bottom-left-radius: 15px;
+            background-color: #dfffed;
+            padding: 5px 5px;
+            width: 40px;
+            height: 40px;
+            outline: none;
+            cursor: pointer;
+
+            span {
+                color: #00ae4a;
+                font-size: 28px;
+            }
+
+            &:hover {
+                span {
+                    transform: scale(1.2);
+                }
+            }
+        }
+    }
+
+    .contentBox {
+        z-index: 9990;
+        opacity: none;
+        position: relative;
+        display: fixed;
+        width: 1000px;
+        height: 600px;
+
+        background-color: white;
+        border-radius: 15px;
+        padding: 20px 20px;
+        display: grid;
+        grid-template-columns: 45% 55%;
+
+        .detailsLeft {
+            background-color: white;
+
+            img {
+                border-radius: 20px;
+                width: 500px;
+                height: 450px;
+            }
+        }
+
+        .detailsRight {
+            margin-top: 20px;
+            padding: 0px 0px 0px 40px;
+            font-size: 18px;
+
+            .productName {
+                font-family: Courier New;
+                font-weight: bold;
+                font-size: 30px;
+                color: #00ae4a;
+                margin: 0px 0px 20px 0px;
+            }
+
+            .productStatus {
+                font-size: 16px;
+
+                .statusValue {
+                    // background-color: #00ae4a;
+                    color: #00ae4a;
+                    font-weight: bold;
+                    font-size: 17px;
+                    padding: 5px 10px;
+                    border-radius: 5px;
+                }
+            }
+
+            .productPrice {
+                color: orangered;
+                font-size: 30px;
+                font-weight: bold;
+                font-family: Courier New;
+                margin: 15px 0px;
+            }
+
+            .productOrigin {
+                font-size: 16px;
+
+                .originValue {
+                    margin: 0px 0px 0px 5px;
+                    font-weight: bold;
+                    color: #00ae4a;
+                }
+            }
+
+            .productDescription {
+                margin: 20px 0px;
+                font-size: 16px;
+                text-align: justify;
+                line-height: 30px;
+                padding-bottom: 40px;
+                border-bottom: 1px dotted #00ae4a;
+            }
+
+            .productSetAmount {
+                label {
+                    font-weight: bold;
+                }
+
+                button {
+                    outline: none;
+                    border: 2px solid #00ae4a;
+                    background-color: white;
+                    font-size: 16px;
+                    cursor: pointer;
+                    padding: 4px 5px 0px 5px;
+                    border-radius: 50px;
+                    color: #00ae4a;
+                    margin: 0px 20px;
+
+                    &:hover {
+                        background-color: #00ae4a;
+                        color: white;
+                    }
+                }
+
+                input {
+                    color: gray;
+                    font-weight: bold;
+                    font-family: Cambria;
+                    text-align: center;
+                    font-size: 18px;
+                    width: 60px;
+                    height: 30px;
+                    padding: 0px 10px;
+                    outline: none;
+                    border: 0px solid black;
+                    border-bottom: 1px solid #00ae4a;
+                }
+
+                span {
+                    color: #00ae4a;
+                    font-size: 25px;
+                }
+            }
+
+            .productNode {
+                color: gray;
+                margin: 20px 0px 15px 0px;
+                font-size: 15.5px;
+            }
+
+            .productAddCart {
+                display: flex;
+
+                button {
+                    display: flex;
+                    align-items: center;
+                    padding: 10px 15px;
+                    outline: none;
+                    width: 225px;
+                    font-size: 16px;
+                    font-weight: bold;
+                    font-family: Cambria;
+                    color: white;
+                    margin: 50px 20px 0 0;
+                    border: 0px solid white;
+                    cursor: pointer;
+                    background-color: #f7b42c;
+                    background-image: linear-gradient(315deg, #f7b42c 0%, #fc575e 74%);
+                    border-radius: 5px;
+                    transition: 0.15s ease-in-out;
+
+                    span {
+                        margin: 0px 5px;
+                    }
+
+                    &:hover {
+                        box-shadow: 1px 1px 10px #c2c2c2;
+                        transform: scale(1.06);
+                        transition: 0.15s ease-in-out;
+                    }
+                }
+
+                .btnBuy {
+                    padding: 0px 50px;
+                    background-color: #70b2d9;
+                    background-image: linear-gradient(315deg, #4a98c5 0%, #27bb93 74%);
+                }
+            }
+        }
+    }
+}

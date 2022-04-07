@@ -1,0 +1,154 @@
+$mainColor: #00ae4a;
+
+.search {
+    position: relative;
+    background-image: #d1ffe5;
+    padding: 0px 0px 0px 115px;
+    padding-top: 80px;
+    display: flex;
+    justify-content: center;
+
+    .searchMain {
+        position: relative;
+        width: 1235px;
+        margin: 80px 125px 100px 20px;
+        border-top: 2px solid white;
+        border-radius: 15px;
+        padding: 0px 10px;
+
+        .mainTitle {
+            text-align: center;
+            position: absolute;
+            padding: 10px 30px;
+            top: -25px;
+            left: 38.5%;
+            color: white;
+            font-size: 33px;
+            font-weight: bold;
+            border-radius: 5px;
+
+            &::before {
+                content: "";
+                background-image: url(//bizweb.dktcdn.net/100/350/980/themes/802125/assets/bg_title.png?1608187967113);
+                background-repeat: no-repeat;
+                width: 69px;
+                height: 32px;
+                position: absolute;
+                left: 38%;
+                top: 60px;
+            }
+
+            span {
+                background: -webkit-linear-gradient(35deg, #3dc754 0%, #ff8a6c 100%);
+                background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+        }
+
+        .mainProducts {
+            // position: absolute;
+            // top: 50px;
+            margin-top: 90px;
+
+            ul {
+                display: flex;
+                justify-content: left;
+                flex-wrap: wrap;
+
+                li {
+                    text-align: center;
+                    list-style: none;
+                    width: 270px;
+                    border: 1px solid #e2e2e2;
+                    border-radius: 15px;
+                    background-color: #f5f6fb;
+                    margin: 15px 18px;
+
+                    .boxOption {
+                        visibility: hidden;
+                        margin-left: 77px;
+                        margin-top: -15px;
+                        padding-top: 7px;
+                        position: absolute;
+                        z-index: 99;
+                        background-color: white;
+
+                        box-shadow: 0px 5px 15px #cacaca;
+                        color: #707070;
+                        font-size: 23px;
+                        cursor: pointer;
+                        height: 30px;
+                        border-radius: 5px;
+
+                        span {
+                            z-index: 99;
+                            color: #696969;
+                            margin: 0px 15px;
+                        }
+                    }
+
+                    .productImage {
+                        position: relative;
+                        overflow: hidden;
+                        width: 100%;
+                        border-top-left-radius: 15px;
+                        border-top-right-radius: 15px;
+
+                        img {
+                            display: block;
+                            width: 100%;
+                            transition: all 0.3s;
+                            width: 100%;
+                            height: 250px;
+                            border-top-left-radius: 10px;
+                            border-top-right-radius: 10px;
+                        }
+                    }
+
+                    .productName {
+                        margin: 10px 0px 0px 0px;
+                        color: #00ae4a;
+                        font-size: 18px;
+                        font-weight: bold;
+                    }
+
+                    .productPrice {
+                        font-size: 20px;
+                        font-weight: bold;
+                        font-family: "Brush Script MT", cursive;
+                        margin: 5px 0px 10px 0px;
+                        color: orangered;
+
+                        .priceUnit {
+                            font-size: 13px;
+                            font-family: "Brush Script MT", cursive;
+                            margin-left: 3px;
+                        }
+                    }
+                }
+
+                li:hover {
+                    cursor: pointer;
+                    box-shadow: 1px 3px 20px #d6d6d6;
+                    transition: 0.25s ease-in-out;
+
+                    .boxOption {
+                        visibility: visible;
+                        transition: 0.25s ease-in-out;
+                        margin-top: 0px;
+                        span:hover {
+                            color: #00ae4a;
+                        }
+                    }
+
+                    .productImage {
+                        img {
+                            transform: scale(1.1);
+                            border-top-left-radius: 20px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,14 +1,20 @@
 import { React } from 'react';
 import styles from './Orders.module.scss'
 import ProductOrder from './ProductOrder';
+// import ProductOrder from './ProductOrder';
 
 function DetailOrder(props) {
 
-    const { setIsShowDetailOrder, detailOrder, listProductsOrder } = props
+    //const baseUrl = 'http://localhost:3333'
+
+    const { setIsShowDetailOrder } = props
+    const data = props.inforDetailOrder
+    const listProducts = props.listProductDetailOrder
 
     const handleCloseDetailOrder = () => {
         setIsShowDetailOrder(false)
     }
+
 
     return (
         <div className={`${styles.detailOrder}`}>
@@ -16,56 +22,50 @@ function DetailOrder(props) {
                 <div className={`${styles.left}`}>
                     <h3>THÔNG TIN ĐƠN HÀNG</h3>
                     {
-                        detailOrder &&
+                        data &&
                         <table>
                             <thead></thead>
                             <tbody>
                                 <tr>
                                     <td className={`${styles.title}`}>Khách hàng:</td>
-                                    <td className={`${styles.content}`}>{detailOrder.tkkh_hoten}</td>
+                                    <td className={`${styles.content}`}>{data.tkkh_hoten}</td>
                                 </tr>
                                 <tr>
                                     <td className={`${styles.title}`}>Liên hệ:</td>
-                                    <td className={`${styles.content}`}>{detailOrder.dh_sodienthoai}</td>
+                                    <td className={`${styles.content}`}>{data.dh_sodienthoai}</td>
                                 </tr>
                                 <tr>
                                     <td className={`${styles.title}`}>Địa chỉ nhận hàng:</td>
                                     <td className={`${styles.content}`}>
-                                        {detailOrder.dh_diachi}
+                                        {data.dh_diachi}
                                     </td>
                                 </tr>
                             </tbody>
                         </table>
                     }
                     {
-                        detailOrder &&
+                        data &&
                         <table className={`${styles.tableOrderDetail}`}>
                             <thead></thead>
                             <tbody>
                                 <tr>
                                     <td className={`${styles.title}`}>Mã đơn hàng:</td>
-                                    <td className={`${styles.content}`}> {detailOrder.dh_id}</td>
-                                </tr>
-                                <tr>
-                                    <td className={`${styles.title}`}>Tài khoản đặt hàng:</td>
-                                    <td className={`${styles.content}`}>
-                                        {detailOrder.dh_taikhoan}
-                                    </td>
+                                    <td className={`${styles.content}`}>{data.dh_id}</td>
                                 </tr>
                                 <tr>
                                     <td className={`${styles.title}`}>Ngày đặt hàng:</td>
-                                    <td className={`${styles.content}`}> {detailOrder.dh_ngaydathang}</td>
+                                    <td className={`${styles.content}`}> {data.dh_ngaydathang}</td>
                                 </tr>
                                 <tr>
                                     <td className={`${styles.title}`}>Hình thức thanh toán:</td>
                                     {
-                                        detailOrder.dh_hinhthucthanhtoan === 'offline' &&
+                                        data.dh_hinhthucthanhtoan === 'offline' &&
                                         <td className={`${styles.content}`}>
                                             Thanh toán khi nhận hàng
                                         </td>
                                     }
                                     {
-                                        detailOrder.dh_hinhthucthanhtoan === 'online' &&
+                                        data.dh_hinhthucthanhtoan === 'online' &&
                                         <td className={`${styles.content}`}>
                                             Thanh toán trực tuyến
                                         </td>
@@ -74,7 +74,7 @@ function DetailOrder(props) {
                                 <tr>
                                     <td className={`${styles.title}`}>Trạng thái đơn hàng:</td>
                                     <td className={`${styles.content}`}>
-                                        {detailOrder.ttdh_trangthai}
+                                        {data.ttdh_trangthai}
                                     </td>
                                 </tr>
                             </tbody>
@@ -89,11 +89,11 @@ function DetailOrder(props) {
                     </button>
                 </div>
                 {
-                    listProductsOrder &&
+                    listProducts &&
                     <div className={`${styles.right}`}>
                         <ul>
                             {
-                                listProductsOrder.map((item, index) => (
+                                listProducts.map((item, index) => (
                                     <ProductOrder
                                         key={index}
                                         item={item}

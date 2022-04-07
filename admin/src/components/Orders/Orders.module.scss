@@ -1,0 +1,355 @@
+$mainColor: #00ae4a;
+
+.orders {
+    float: right;
+    width: 83%;
+    margin-top: 100px;
+    background-color: #f3f4f3;
+
+    .tableOrders {
+        border-collapse: collapse;
+        box-shadow: 1px 1px 10px gray;
+        background-color: white;
+        border-radius: 15px;
+        margin: 40px 0px 20px 40px;
+
+        thead {
+            .tableName {
+                background-color: $mainColor;
+
+                td {
+                    padding: 10px 20px;
+                    font-size: 19px;
+                    font-weight: bold;
+                    color: white;
+                    border-bottom-right-radius: 10px;
+                    border-top-left-radius: 10px;
+                }
+            }
+            .ordersAmount {
+                td {
+                    color: red;
+                    font-weight: bold;
+                    font-size: 16px;
+                    padding: 15px 10px 20px 20px;
+                }
+            }
+
+            .emptyRow {
+                span {
+                    color: white;
+                    visibility: hidden;
+                }
+            }
+
+            .tableTitle {
+                border-collapse: collapse;
+                font-size: 17px;
+                font-weight: bold;
+
+                td {
+                    background-color: #eaffec;
+                    padding: 7px 40px;
+                    color: $mainColor;
+                    text-align: center;
+                }
+            }
+        }
+
+        tbody {
+            .orderItem {
+                &:hover {
+                    background-color: #eaffec;
+
+                    .catagoryButton {
+                        button {
+                            background-color: #eaffec;
+                        }
+                    }
+                }
+                td {
+                    padding: 20px 0px 20px 0px;
+                    padding-left: 0px;
+                    text-align: center;
+                }
+
+                .itemName {
+                    font-weight: bold;
+                    color: orange;
+                }
+
+                .itemState {
+                    span {
+                        color: #ff6a00;
+                        background-color: #ffe3d0;
+                        font-weight: bold;
+                        border-radius: 10px;
+                        padding: 5px 10px;
+                        font-size: 14px;
+                    }
+
+                    .successState {
+                        background-color: #e9fff3;
+                        color: #00ae4a;
+                    }
+
+                    .shippingState {
+                        background-color: #d2f2ff;
+                        color: #245dfa;
+                    }
+
+                    .receivedState {
+                        background-color: #eeeeee;
+                        color: #7e7e7e;
+                    }
+                }
+
+                .updateState {
+                    button {
+                        background-color: #f76300;
+                        color: #fff;
+                        border: 0px solid #f88519;
+                        font-weight: bold;
+                        font-size: 15px;
+                        padding: 8px 45px;
+                        border-radius: 10px;
+                        cursor: pointer;
+
+                        &:hover {
+                            transform: scale(1.05);
+                        }
+                    }
+
+                    select {
+                        width: 100px;
+                        height: 30px;
+                        border: 1px solid #00ae4a;
+                        outline: none;
+                        color: #00ae4a;
+                        font-weight: bold;
+                        border-radius: 5px;
+
+                        option {
+                            font-weight: bold;
+                            line-height: 40px;
+                        }
+                    }
+                }
+
+                .catagoryButton {
+                    display: flex;
+                    padding: 15px 15px 15px 15px;
+
+                    button {
+                        width: 50px;
+                        font-size: 16px;
+                        padding: 7px 7px 6px 7px;
+                        margin: 0px 5px;
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: center;
+                        align-items: center;
+                        outline: none;
+                        border-radius: 5px;
+                        border: 0px solid black;
+                        font-family: Cambria;
+                        font-weight: bold;
+
+                        .buttonIcon {
+                            margin-right: 7px;
+                        }
+                    }
+
+                    button:hover {
+                        cursor: pointer;
+                        .buttonIcon {
+                            width: 70px;
+                        }
+                        .buttonLabel {
+                            display: none;
+                            visibility: hidden;
+                        }
+                    }
+
+                    .buttonEdit {
+                        font-size: 20px;
+                        background-color: #fff;
+                        color: #245dfa;
+
+                        &:hover {
+                            background-color: #eaffec;
+                            transform: scale(1.15);
+                            transition: ease-in-out 0.15s;
+                        }
+                    }
+
+                    .buttonDelete {
+                        font-size: 20px;
+                        background-color: #fff;
+                        color: red;
+
+                        &:hover {
+                            background-color: #eaffec;
+                            transform: scale(1.15);
+                            transition: ease-in-out 0.15s;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .detailOrder {
+        display: block;
+        position: fixed;
+        top: 0px;
+        right: 0px;
+        bottom: 0px;
+        left: 0px;
+        background-color: rgba(104, 104, 104, 0.5);
+        z-index: 99;
+
+        .main {
+            position: relative;
+            top: 40px;
+            background-color: #fff;
+            margin: 0px auto;
+            width: 1300px;
+            height: 650px;
+            border-radius: 15px;
+
+            .left {
+                position: absolute;
+                //background-color: #d4edff;
+                width: 750px;
+                height: 100%;
+                border-radius: 15px;
+
+                h3 {
+                    margin-right: -60px;
+                    color: #ff6a00;
+                    font-size: 25px;
+                    text-align: right;
+                }
+
+                table {
+                    margin: 10px 0px 10px 20px;
+                    padding-bottom: 20px;
+                    border-bottom: 1px solid #d6d6d6;
+
+                    tbody {
+                        tr {
+                            td {
+                                padding: 10px 10px 10px 0px;
+                                font-family: monospace;
+                                font-size: 16px;
+                                line-height: 30px;
+                            }
+
+                            .title {
+                                width: 190px;
+
+                                color: #00ae4a;
+                            }
+
+                            .content {
+                                font-size: 16px;
+                                color: #4b4b4b;
+
+                                span {
+                                    font-weight: bold;
+                                    font-size: 20px;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .tableOrderDetail {
+                    margin-top: 20px;
+                    border-bottom: 0px solid #d6d6d6;
+                }
+
+                .btnClose {
+                    position: absolute;
+                    right: 40px;
+                    bottom: 20px;
+                    border: 0px solid #00ae4a;
+                    font-size: 17px;
+                    font-weight: bold;
+                    padding: 10px 30px;
+                    color: #fff;
+                    background-color: #ff6a00;
+                    border-radius: 20px;
+                    cursor: pointer;
+
+                    &:hover {
+                        box-shadow: 1px 1px 10px #faaf24;
+                        transition: ease-in-out 0.2s;
+                    }
+                }
+            }
+
+            .right {
+                position: absolute;
+                right: 0px;
+                top: 100px;
+                width: 550px;
+
+                ul {
+                    padding-right: 120px;
+                    padding-left: 10px;
+                    margin-left: 50px;
+
+                    li {
+                        position: relative;
+                        list-style-type: none;
+                        font-family: monospace;
+                        margin: 25px 0px 0px 0px;
+
+                        .amount {
+                            position: absolute;
+                            left: 85px;
+                            background-color: #00ae4a;
+                            color: white;
+                            font-weight: bold;
+                            border-radius: 50px;
+                            width: 22px;
+                            height: 20px;
+                            text-align: center;
+                            padding: 4px 1px 0 1px;
+                            font-size: 14px;
+                            top: -5px;
+                        }
+
+                        .name {
+                            position: absolute;
+                            top: 30px;
+                            left: 140px;
+                            font-weight: bold;
+                            color: #525252;
+                            font-size: 15px;
+                        }
+
+                        .price {
+                            position: absolute;
+                            left: 370px;
+                            top: 25px;
+                            font-size: 17px;
+                            font-weight: bold;
+                            color: #ff3c3c;
+                            // color: orangered;
+                        }
+
+                        img {
+                            width: 100px;
+                            height: 80px;
+                            border-radius: 5px;
+                            box-shadow: 1px 1px 5px #747474;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

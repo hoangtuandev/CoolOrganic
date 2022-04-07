@@ -1,0 +1,593 @@
+$mainColor: #00ae4a;
+
+.home {
+    position: relative;
+    background-image: #d1ffe5;
+    padding: 0px 0px 0px 115px;
+    padding-top: 80px;
+    display: flex;
+    justify-content: center;
+
+    .homeBanner {
+        //background-color: yellow;
+        padding: 0px 0px 0px 50px;
+        display: grid;
+        grid-template-columns: 420px 670px;
+        margin-bottom: 140px;
+
+        .bannerLeft {
+            .title {
+                font-size: 65px;
+                font-weight: bold;
+                color: $mainColor;
+                margin: 100px 0px 10px 0px;
+                user-select: none;
+            }
+
+            .description {
+                font-size: 35px;
+                color: gray;
+                font-weight: bold;
+                user-select: none;
+            }
+
+            .standard {
+                user-select: none;
+                display: flex;
+                flex-direction: row;
+                //align-items: center;
+                color: #039642;
+                margin-top: 30px;
+
+                .standardAmount {
+                    font-size: 60px;
+                    font-weight: bold;
+                    font-family: Arial;
+                    margin-right: 15px;
+                }
+
+                .standardTitle {
+                    font-size: 27px;
+                    font-weight: bold;
+                    font-family: Arial;
+                    line-height: 50px;
+                }
+
+                ul {
+                    li {
+                        margin: 5px 0px;
+                        font-size: 23px;
+                        color: gray;
+                        list-style-type: none;
+
+                        span {
+                            font-size: 16px;
+                            margin-right: 10px;
+                        }
+                    }
+                }
+            }
+
+            .btnLink {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-size: 17px;
+                font-weight: bold;
+                font-family: Cambria;
+                width: 170px;
+                padding: 5px 20px;
+                margin: 50px 0px 20px 0px;
+                color: white;
+                border: 0px solid black;
+                border-radius: 5px;
+                cursor: pointer;
+                background-color: #90d5ec;
+                background-image: linear-gradient(315deg, #90d5ec 0%, #fc575e 74%);
+
+                &:hover {
+                    transition: 0.15s ease-in-out;
+                    font-size: 18px;
+                }
+
+                .btnIcon {
+                    padding-top: 5px;
+                    font-size: 24px;
+                }
+            }
+        }
+
+        .bannerRight {
+            margin-top: 30px;
+
+            img {
+                transition: ease-in-out 1s;
+                margin-left: 150px;
+                width: 700px;
+                height: 600px;
+            }
+        }
+    }
+
+    .homeDiscount {
+        position: relative;
+        width: 1210px;
+        height: 470px;
+        margin: 30px 0px 50px 20px;
+        border: 2px solid #039642;
+        // border-top: 2px solid #039642;
+        // border-left: 2px solid #039642;
+        padding: 0px 20px;
+        border-radius: 15px;
+
+        .discountTitle {
+            position: absolute;
+            top: -40px;
+            left: 30px;
+            font-size: 30px;
+            font-weight: bold;
+            //z-index: 20;
+            background-color: white;
+            padding: 0px 20px;
+            display: flex;
+            align-items: center;
+            color: #039642;
+            // background: linear-gradient(to right, #30cfd0 0%, #330867 100%);
+            // background-clip: text;
+            // color: transparent;
+
+            img {
+                width: 60px;
+                height: 60px;
+                margin-right: 15px;
+                margin-top: 5px;
+            }
+
+            .timerCount {
+                display: flex;
+                align-items: center;
+                z-index: 9;
+
+                ul {
+                    color: gray;
+                    margin: 0px 5px;
+                    li {
+                        font-size: 35px;
+                        text-align: center;
+                        list-style-type: none;
+                    }
+
+                    .timerUnit {
+                        font-size: 17px;
+                        color: gray;
+                    }
+                }
+
+                .timerClock {
+                    color: #00ae4a;
+                    border: 1px solid $mainColor;
+                    padding: 5px 10px;
+                    border-radius: 10px;
+                }
+
+                .clockSecond {
+                    color: red;
+                }
+            }
+        }
+
+        .discountProducts {
+            margin: 130px 0px 0px 0px;
+
+            ul {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+
+                li {
+                    position: relative;
+                    list-style-type: none;
+                    width: 240px;
+                    height: 280px;
+                    text-align: center;
+                    border-radius: 15px;
+                    transition: 0.2s ease-in-out;
+
+                    .main {
+                        position: absolute;
+                        text-align: center;
+                        background-color: #ececec;
+                        background-image: url("../../images/background_product_1.png");
+                        background-repeat: no-repeat;
+                        background-size: cover;
+                        width: 230px;
+                        height: 280px;
+                        margin: 0px 10px;
+                        border-radius: 15px;
+                        padding: 0px 0px 30px 0px;
+
+                        .productImage {
+                            margin-top: -40px;
+
+                            img {
+                                width: 150px;
+                                height: 130px;
+                            }
+                        }
+
+                        .productRatio {
+                            font-family: Georgia, serif;
+                            font-size: 20px;
+                            font-weight: bold;
+                            color: red;
+                            text-align: right;
+                            margin: -20px 15px 10px 10px;
+                            z-index: 999;
+                        }
+
+                        .productName {
+                            font-size: 18px;
+                            font-weight: bold;
+                            font-family: "Trebuchet MS", sans-serif;
+                            color: #039642;
+                            margin: 40px 0px 15px 0px;
+                        }
+
+                        .productPriceNew {
+                            font-size: 40px;
+                            font-weight: bold;
+                            font-family: "Brush Script MT", cursive;
+                            margin: 15px 0px 0px 0px;
+                            color: orangered;
+
+                            .priceUnit {
+                                font-size: 17px;
+                                font-family: Garamond, serif;
+                                margin-right: 5px;
+                            }
+
+                            .priceThounsand {
+                                font-size: 17px;
+                            }
+                        }
+
+                        .productPriceOld {
+                            font-family: "Brush Script MT", cursive;
+                            font-size: 18px;
+                            color: #00ae4a;
+
+                            sup {
+                                font-size: 13px;
+                            }
+                        }
+
+                        .productButton {
+                            button {
+                                border: 2px solid #00ae4a;
+                                padding: 5px 10px;
+                                font-weight: bold;
+                                font-family: "Trebuchet MS", sans-serif;
+                                font-size: 17px;
+                                margin-top: 20px;
+                                border-radius: 5px;
+                                color: #039642;
+                                cursor: pointer;
+                                background-color: #00ae4a;
+                                color: white;
+                            }
+                        }
+                    }
+                }
+
+                li:hover {
+                    height: 290px;
+                    margin: -30px 0px 0px 0px;
+                    transition: 0.2s ease-in-out;
+                    cursor: pointer;
+
+                    .main {
+                        background-color: #9bd8b5;
+                        background-image: url("../../images/background_product_2.png");
+                        margin: 0px 5px;
+                        width: 100%;
+                        height: 100%;
+
+                        .productImage {
+                            margin-top: -60px;
+
+                            img {
+                                transform: scale(1.15);
+                            }
+                        }
+
+                        .productRatio {
+                            margin-top: 5px;
+                            color: red;
+                        }
+
+                        .productName {
+                            font-size: 20px;
+                            color: white;
+                            margin-top: 40px;
+                        }
+
+                        .productPriceNew {
+                            font-size: 55px;
+                        }
+
+                        .productPriceOld {
+                            color: white;
+                        }
+
+                        .productButton {
+                            margin-top: 5px;
+
+                            button {
+                                border: 2px orangered solid;
+                                background-color: white;
+                                color: orangered;
+
+                                &:hover {
+                                    background-color: orangered;
+                                    color: white;
+                                    transition: 0.1s ease-in-out;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .fruitHome {
+        position: relative;
+        width: 1235px;
+        margin: 80px 125px 100px 20px;
+        border-top: 2px solid white;
+        border-radius: 15px;
+        padding: 0px 10px;
+
+        .fruitTitle {
+            text-align: center;
+            position: absolute;
+            padding: 10px 30px;
+            top: -25px;
+            left: 38.5%;
+
+            // background-color: #4ac573;
+            // background-image: linear-gradient(315deg, #3cd36f 0%, #0dabd6 90%);
+            color: white;
+
+            font-size: 33px;
+            font-weight: bold;
+            border-radius: 5px;
+
+            &::before {
+                content: "";
+                background-image: url(//bizweb.dktcdn.net/100/350/980/themes/802125/assets/bg_title.png?1608187967113);
+                background-repeat: no-repeat;
+                width: 69px;
+                height: 32px;
+                position: absolute;
+                left: 38%;
+                top: 60px;
+            }
+
+            span {
+                background: -webkit-linear-gradient(35deg, #3dc754 0%, #ff8a6c 100%);
+                background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+        }
+
+        .fruitProducts {
+            // position: absolute;
+            // top: 50px;
+            margin-top: 90px;
+
+            ul {
+                display: flex;
+                justify-content: space-around;
+
+                .linkRoute {
+                    text-decoration: none;
+                }
+
+                li {
+                    text-align: center;
+                    list-style: none;
+                    width: 270px;
+                    border: 1px solid #e2e2e2;
+                    border-radius: 15px;
+                    background-color: #f5f6fb;
+
+                    .boxOption {
+                        visibility: hidden;
+                        margin-left: 77px;
+                        margin-top: -15px;
+                        padding-top: 7px;
+                        position: absolute;
+                        z-index: 99;
+                        background-color: white;
+
+                        box-shadow: 0px 5px 15px #cacaca;
+                        color: #707070;
+                        font-size: 23px;
+                        cursor: pointer;
+                        height: 30px;
+                        border-radius: 5px;
+
+                        span {
+                            z-index: 99;
+                            color: #696969;
+                            margin: 0px 15px;
+                        }
+                    }
+
+                    .productImage {
+                        position: relative;
+                        overflow: hidden;
+                        width: 100%;
+                        border-top-left-radius: 15px;
+                        border-top-right-radius: 15px;
+
+                        img {
+                            display: block;
+                            max-width: 100%;
+                            transition: all 0.3s;
+                            width: 100%;
+                            height: 250px;
+                            transform: scale(1);
+                            border-top-left-radius: 15px;
+                            border-top-right-radius: 15px;
+                        }
+                    }
+
+                    .productName {
+                        margin: 10px 0px 0px 0px;
+                        color: #00ae4a;
+                        font-size: 18px;
+                        font-weight: bold;
+                    }
+
+                    .productPrice {
+                        font-size: 20px;
+                        font-weight: bold;
+                        font-family: "Brush Script MT", cursive;
+                        margin: 5px 0px 10px 0px;
+                        color: orangered;
+
+                        .priceUnit {
+                            font-size: 13px;
+                            font-family: "Brush Script MT", cursive;
+                            margin-left: 3px;
+                        }
+                    }
+                }
+
+                li:hover {
+                    cursor: pointer;
+                    box-shadow: 1px 3px 20px #d6d6d6;
+                    transition: 0.25s ease-in-out;
+
+                    .boxOption {
+                        visibility: visible;
+                        transition: 0.25s ease-in-out;
+                        margin-top: 0px;
+                        span:hover {
+                            color: #00ae4a;
+                        }
+                    }
+
+                    .productImage {
+                        img {
+                            transform: scale(1.1);
+                            border-top-left-radius: 20px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .newsHome {
+        margin: 0px 0px 250px 50px;
+
+        p {
+            top: -22px;
+            font-weight: bold;
+            font-size: 30px;
+            display: flex;
+            align-items: center;
+            background-color: white;
+            padding-right: 20px;
+            color: #00ae4a;
+
+            .newsIcon {
+                padding: 7px 15px 0px 0px;
+                font-size: 35px;
+            }
+        }
+
+        .newsMain {
+            width: 1280px;
+            display: flex;
+            margin-top: 20px;
+
+            li {
+                position: relative;
+                background-color: whitesmoke;
+                margin: 0px 11px;
+                list-style: none;
+                width: 380px;
+                text-align: justify;
+
+                &:hover {
+                    cursor: pointer;
+
+                    .newsBackround {
+                        img {
+                            transform: scale(1.1);
+                        }
+                    }
+                }
+
+                .newsBackround {
+                    position: relative;
+                    overflow: hidden;
+                    width: 100%;
+
+                    img {
+                        display: block;
+                        max-width: 100%;
+                        transition: all 0.3s;
+                        width: 100%;
+                        height: 250px;
+                        transform: scale(1);
+                    }
+                }
+
+                .newsContent {
+                    position: absolute;
+                    top: 140px;
+                    left: 20px;
+                    width: 320px;
+                    background-color: white;
+                    padding: 10px 10px;
+                    box-shadow: 1px 5px 15px #afafaf;
+                    border-radius: 10px;
+
+                    .contentTitle {
+                        font-weight: bold;
+                        font-size: 19px;
+                        color: #00ae4a;
+                        margin: 0px 0px 10px 0px;
+                    }
+
+                    .contentDescription {
+                        font-family: "Quicksand", sans-serif;
+                        line-height: 24px;
+                        word-break: break-word;
+                    }
+
+                    .contentDate {
+                        display: flex;
+                        align-items: center;
+                        margin: 10px 0px 5px 0px;
+
+                        span {
+                            color: orangered;
+                            font-weight: bold;
+                        }
+
+                        .dateIcon {
+                            padding: 5px 5px 0px 0px;
+                            font-size: 22px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

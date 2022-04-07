@@ -1,71 +1,67 @@
 import { React, useState, useEffect } from 'react';
 import axios from 'axios'
 import styles from './Orders.module.scss'
-import OrdersContent from './OrdersContent';
-import OrdersHeader from './OrdersHeader';
+import ItemOrder from './ItemOrder';
 import DetailOrder from './DetailOrder';
 
-function Orders() {
+function Orders(props) {
 
-    const baseUrl = 'http://localhost:3333'
-    const [allOrders, setAllOrders] = useState([])
+    const { cookies } = props
+    const baseURL = 'http://localhost:3333'
+    const [listOrders, setListOrders] = useState([])
     const [isShowDetailOrder, setIsShowDetailOrder] = useState(false)
-    const [orderSelectedView, setOrderSelectedView] = useState('')
-    const [detailOrder, setDetailOrder] = useState({})
-    const [listProductsOrder, setListProductsOrder] = useState([])
-
-    const handleGetAllOrders = () => {
-        axios.get(baseUrl + '/orders/allOrder', {})
-            .then((res) => {
-                setAllOrders(res.data)
-            })
-    }
+    const [orderSelected, setOrderSelected] = useState('')
+    const [inforDetailOrder, setInforDetailOrder] = useState()
+    const [listProductDetailOrder, setListProductDetailOrder] = useState()
 
     useEffect(() => {
-        handleGetAllOrders()
-    }, [])
+        axios.post(baseURL + '/orders/OrdersByAccount', { account: cookies.phone })
+            .then((res) => {
+                setListOrders(res.data)
+            })
+    }, [cookies.phone])
 
     useEffect(() => {
-        axios.post(baseUrl + '/detailOrder/getdetailOrder', { id: orderSelectedView })
+        axios.post(baseURL + '/detailOrder/getdetailOrder', { id: orderSelected })
             .then((res) => {
-                setDetailOrder(res.data[res.data.length - 1])
-
-                axios.post(baseUrl + '/detailOrder/getListProducts', { id: orderSelectedView })
-                    .then((res) => {
-                        setListProductsOrder(res.data)
-                    })
+                setInforDetailOrder(res.data[res.data.length - 1])
             })
-    }, [orderSelectedView])
+
+        axios.post(baseURL + '/detailOrder/getListProducts', { id: orderSelected })
+            .then((res) => {
+                setListProductDetailOrder(res.data)
+            })
+    }, [orderSelected])
 
     return (
         <div className={`${styles.orders}`}>
-            <table className={`${styles.tableOrders}`}>
-                <OrdersHeader></OrdersHeader>
-                <tbody>
+            <h2 >
+                <span>ĐƠN HÀNG CỦA BẠN</span>
+                <ul className={`${styles.listOrders}`}>
                     {
-                        allOrders.map((item, index) => (
-                            <OrdersContent
+                        listOrders &&
+                        listOrders.map((item, index) => (
+                            <ItemOrder
                                 key={index}
                                 item={item}
                                 setIsShowDetailOrder={setIsShowDetailOrder}
-                                setOrderSelectedView={setOrderSelectedView}
-                                handleGetAllOrders={handleGetAllOrders}
-                            >
-                            </OrdersContent>
+                                setOrderSelected={setOrderSelected}
+                            ></ItemOrder>
+
                         ))
                     }
-                </tbody>
-            </table>
+                </ul>
+            </h2>
             {
                 isShowDetailOrder &&
                 <DetailOrder
                     setIsShowDetailOrder={setIsShowDetailOrder}
-                    orderSelectedView={orderSelectedView}
-                    detailOrder={detailOrder}
-                    listProductsOrder={listProductsOrder}
+                    inforDetailOrder={inforDetailOrder}
+                    listProductDetailOrder={listProductDetailOrder}
                 ></DetailOrder>
             }
-        </div>
+
+        </div >
     );
 }
 

@@ -1,199 +1,141 @@
 $mainColor: #00ae4a;
 
 .orders {
-    float: right;
-    width: 83%;
-    margin-top: 100px;
-    background-color: #f3f4f3;
+    padding: 120px 120px 50px 120px;
+    //background-color: aliceblue;
 
-    .tableOrders {
-        border-collapse: collapse;
-        box-shadow: 1px 1px 10px gray;
-        background-color: white;
-        border-radius: 15px;
-        margin: 40px 0px 20px 40px;
+    h2 {
+        position: relative;
+        text-align: center;
+        padding: 10px 30px;
+        color: white;
+        font-size: 33px;
+        font-weight: bold;
+        border-radius: 5px;
+        margin-bottom: 40px;
 
-        thead {
-            .tableName {
-                background-color: $mainColor;
-
-                td {
-                    padding: 10px 20px;
-                    font-size: 19px;
-                    font-weight: bold;
-                    color: white;
-                    border-bottom-right-radius: 10px;
-                    border-top-left-radius: 10px;
-                }
-            }
-            .ordersAmount {
-                td {
-                    color: red;
-                    font-weight: bold;
-                    font-size: 16px;
-                    padding: 15px 10px 20px 20px;
-                }
-            }
-
-            .emptyRow {
-                span {
-                    color: white;
-                    visibility: hidden;
-                }
-            }
-
-            .tableTitle {
-                border-collapse: collapse;
-                font-size: 17px;
-                font-weight: bold;
-
-                td {
-                    background-color: #eaffec;
-                    padding: 7px 40px;
-                    color: $mainColor;
-                    text-align: center;
-                }
-            }
+        &::before {
+            content: "";
+            background-image: url(//bizweb.dktcdn.net/100/350/980/themes/802125/assets/bg_title.png?1608187967113);
+            background-repeat: no-repeat;
+            width: 69px;
+            height: 32px;
+            display: block;
+            position: absolute;
+            left: 47%;
+            top: 55px;
         }
 
-        tbody {
-            .orderItem {
-                &:hover {
-                    background-color: #eaffec;
+        span {
+            background: -webkit-linear-gradient(35deg, #3dc754 0%, #ff8a6c 100%);
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    }
 
-                    .catagoryButton {
-                        button {
-                            background-color: #eaffec;
-                        }
-                    }
-                }
-                td {
-                    padding: 20px 0px 20px 0px;
-                    padding-left: 0px;
-                    text-align: center;
-                }
+    .listOrders {
+        margin-top: 70px;
+        display: flex;
+        flex-wrap: wrap;
 
-                .itemName {
-                    font-weight: bold;
-                    color: orange;
-                }
+        .itemOrder {
+            background-color: #fff;
+            position: relative;
+            list-style-type: none;
+            border-radius: 15px;
+            box-shadow: 1px 1px 10px #dadada;
+            margin: 18px 18px;
 
-                .itemState {
-                    span {
-                        color: #ff6a00;
-                        background-color: #ffe3d0;
-                        font-weight: bold;
-                        border-radius: 10px;
-                        padding: 5px 10px;
+            width: 370px;
+            height: 350px;
+            color: #5c5c5c;
+            font-family: monospace;
+            font-weight: none;
+            transition: ease-in-out 0.15s;
+
+            &:hover {
+                cursor: pointer;
+                transition: ease-in-out 0.1s;
+                transform: scale(1.02);
+            }
+
+            .idOrder {
+                position: absolute;
+                font-size: 20px;
+                padding: 20px 20px;
+                color: #28bb65;
+            }
+
+            .iconState {
+                position: absolute;
+                background-color: #fff;
+                border-bottom-left-radius: 15px;
+                border-top-right-radius: 15px;
+                right: 0px;
+                padding: 15px 15px 5px 15px;
+                font-size: 50px;
+            }
+
+            .inforOrder {
+                position: absolute;
+                top: 80px;
+
+                table {
+                    tr {
                         font-size: 14px;
-                    }
+                        font-weight: none;
+                        text-align: left;
 
-                    .successState {
-                        background-color: #e9fff3;
-                        color: #00ae4a;
-                    }
+                        td {
+                            padding: 10px 15px;
+                        }
 
-                    .shippingState {
-                        background-color: #d2f2ff;
-                        color: #245dfa;
-                    }
-
-                    .receivedState {
-                        background-color: #eeeeee;
-                        color: #7e7e7e;
+                        .titleInfor {
+                            color: #00ae4a;
+                            font-size: 13.5px;
+                        }
                     }
                 }
+            }
 
-                .updateState {
-                    button {
-                        background-color: #f76300;
-                        color: #fff;
-                        border: 0px solid #f88519;
-                        font-weight: bold;
-                        font-size: 15px;
-                        padding: 8px 45px;
+            .listImgProducts {
+                position: absolute;
+                display: flex;
+
+                top: 215px;
+
+                li {
+                    list-style-type: none;
+
+                    img {
+                        width: 90px;
+                        height: 80px;
                         border-radius: 10px;
-                        cursor: pointer;
-
-                        &:hover {
-                            transform: scale(1.05);
-                        }
-                    }
-
-                    select {
-                        width: 100px;
-                        height: 30px;
-                        border: 1px solid #00ae4a;
-                        outline: none;
-                        color: #00ae4a;
-                        font-weight: bold;
-                        border-radius: 5px;
-
-                        option {
-                            font-weight: bold;
-                            line-height: 40px;
-                        }
+                        margin: 0px 0px 0px 10px;
                     }
                 }
+            }
 
-                .catagoryButton {
-                    display: flex;
-                    padding: 15px 15px 15px 15px;
+            button {
+                position: absolute;
+                bottom: 10px;
+                left: 115px;
+                outline: none;
+                border: 0px solid #00ae4a;
 
-                    button {
-                        width: 50px;
-                        font-size: 16px;
-                        padding: 7px 7px 6px 7px;
-                        margin: 0px 5px;
-                        display: flex;
-                        flex-direction: row;
-                        justify-content: center;
-                        align-items: center;
-                        outline: none;
-                        border-radius: 5px;
-                        border: 0px solid black;
-                        font-family: Cambria;
-                        font-weight: bold;
+                background-color: #ffc400;
+                color: #fff;
+                font-weight: bold;
+                font-size: 14px;
+                font-family: monospace;
+                padding: 7px 15px;
+                border-radius: 20px;
+                transition: ease-in-out 0.2s;
 
-                        .buttonIcon {
-                            margin-right: 7px;
-                        }
-                    }
-
-                    button:hover {
-                        cursor: pointer;
-                        .buttonIcon {
-                            width: 70px;
-                        }
-                        .buttonLabel {
-                            display: none;
-                            visibility: hidden;
-                        }
-                    }
-
-                    .buttonEdit {
-                        font-size: 20px;
-                        background-color: #fff;
-                        color: #245dfa;
-
-                        &:hover {
-                            background-color: #eaffec;
-                            transform: scale(1.15);
-                            transition: ease-in-out 0.15s;
-                        }
-                    }
-
-                    .buttonDelete {
-                        font-size: 20px;
-                        background-color: #fff;
-                        color: red;
-
-                        &:hover {
-                            background-color: #eaffec;
-                            transform: scale(1.15);
-                            transition: ease-in-out 0.15s;
-                        }
-                    }
+                &:hover {
+                    cursor: pointer;
+                    box-shadow: 1px 1px 10px #ffe15c;
+                    transition: ease-in-out 0.2s;
                 }
             }
         }
@@ -207,26 +149,26 @@ $mainColor: #00ae4a;
         bottom: 0px;
         left: 0px;
         background-color: rgba(104, 104, 104, 0.5);
-        z-index: 99;
+        z-index: 399;
 
         .main {
             position: relative;
-            top: 40px;
+            top: 100px;
             background-color: #fff;
             margin: 0px auto;
-            width: 1300px;
-            height: 650px;
+            width: 1000px;
+            height: 550px;
             border-radius: 15px;
 
             .left {
                 position: absolute;
                 //background-color: #d4edff;
-                width: 750px;
+                width: 600px;
                 height: 100%;
                 border-radius: 15px;
 
                 h3 {
-                    margin-right: -60px;
+                    margin: 15px -60px 20px 0px;
                     color: #ff6a00;
                     font-size: 25px;
                     text-align: right;
@@ -240,9 +182,9 @@ $mainColor: #00ae4a;
                     tbody {
                         tr {
                             td {
-                                padding: 10px 10px 10px 0px;
+                                padding: 7px 10px 7px 0px;
                                 font-family: monospace;
-                                font-size: 16px;
+                                font-size: 15px;
                                 line-height: 30px;
                             }
 
@@ -275,9 +217,10 @@ $mainColor: #00ae4a;
                     right: 40px;
                     bottom: 20px;
                     border: 0px solid #00ae4a;
-                    font-size: 17px;
+                    font-family: Cambria;
+                    font-size: 15px;
                     font-weight: bold;
-                    padding: 10px 30px;
+                    padding: 7px 25px;
                     color: #fff;
                     background-color: #ff6a00;
                     border-radius: 20px;
@@ -293,8 +236,8 @@ $mainColor: #00ae4a;
             .right {
                 position: absolute;
                 right: 0px;
-                top: 100px;
-                width: 550px;
+                top: 60px;
+                width: 430px;
 
                 ul {
                     padding-right: 120px;
@@ -309,7 +252,7 @@ $mainColor: #00ae4a;
 
                         .amount {
                             position: absolute;
-                            left: 85px;
+                            left: 75px;
                             background-color: #00ae4a;
                             color: white;
                             font-weight: bold;
@@ -317,33 +260,33 @@ $mainColor: #00ae4a;
                             width: 22px;
                             height: 20px;
                             text-align: center;
-                            padding: 4px 1px 0 1px;
+                            padding: 3px 1px 0 1px;
                             font-size: 14px;
                             top: -5px;
                         }
 
                         .name {
                             position: absolute;
-                            top: 30px;
-                            left: 140px;
+                            top: 25px;
+                            left: 110px;
                             font-weight: bold;
                             color: #525252;
-                            font-size: 15px;
+                            font-size: 14px;
                         }
 
                         .price {
                             position: absolute;
-                            left: 370px;
-                            top: 25px;
-                            font-size: 17px;
+                            left: 280px;
+                            top: 23px;
+                            font-size: 15px;
                             font-weight: bold;
                             color: #ff3c3c;
                             // color: orangered;
                         }
 
                         img {
-                            width: 100px;
-                            height: 80px;
+                            width: 90px;
+                            height: 70px;
                             border-radius: 5px;
                             box-shadow: 1px 1px 5px #747474;
                         }

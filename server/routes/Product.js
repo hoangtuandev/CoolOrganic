@@ -13,6 +13,13 @@ router.get('/products', (req, res) => {
     })
 })
 
+router.post('/products/getProductsByPricingRange', (req, res) => {
+    Product.getProductsByPricingRange(req, (err, result) => {
+        if (err) { console.log(err) }
+        else { res.send(result) }
+    })
+})
+
 router.post('/products/addProduct', (req, res) => {
     Product.addProduct(req, (err, result) => {
         if (err) { console.log(err) }

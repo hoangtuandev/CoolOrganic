@@ -1,0 +1,195 @@
+$mainColor: #00ae4a;
+
+.header {
+    position: fixed;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+    height: 75px;
+    background-color: white;
+    z-index: 111;
+    box-shadow: 0 3px 10px 0 #e7e7e7;
+
+    .headerLogo {
+        width: 400px;
+
+        img {
+            width: 150px;
+            height: 50px;
+            margin: 10px 0px 10px 20px;
+        }
+    }
+
+    .headerSearch {
+        .searchBox {
+            position: relative;
+
+            .searchField {
+                border: 1px solid $mainColor;
+                border-radius: 50px;
+                width: 430px;
+                height: 25px;
+                padding: 6px 30px;
+                color: gray;
+                font-weight: 550;
+                font-family: Cambria;
+                font-size: 16px;
+                outline: none;
+            }
+
+            .searchLable {
+                color: gray;
+                position: absolute;
+                left: 25px;
+                top: 10px;
+                user-select: none;
+                pointer-events: none;
+                transition: 0.25s ease-in-out;
+            }
+
+            .searchIcon {
+                border: 1px solid $mainColor;
+                position: absolute;
+                top: -6px;
+                right: 0px;
+                background-color: #00ae4a;
+                font-size: 25px;
+                padding: 10px 12px 7px 12px;
+                border-radius: 50px;
+                color: white;
+                cursor: pointer;
+                transition: 0.2s ease-in-out;
+
+                &:hover {
+                    transition: 0.2s ease-in-out;
+                    transform: scale(1.1);
+                }
+            }
+            .searchField:not(:placeholder-shown) + .searchLable,
+            .searchField:focus + .searchLable {
+                top: -12px;
+                padding: 0px 10px;
+                background-color: white;
+                transition: 0.25s ease-in-out;
+            }
+        }
+    }
+
+    .headerUser {
+        width: 400px;
+        //background-color: coral;
+        text-align: right;
+        display: flex;
+        justify-content: right;
+        align-items: center;
+        position: relative;
+
+        li {
+            list-style-type: none;
+            margin: 0px 20px;
+        }
+
+        img {
+            width: 37px;
+            height: 37px;
+            border-radius: 50px;
+            margin: 0px 0px 0px -3px;
+        }
+
+        .cartShopping {
+            color: #00ae4a;
+            border: 1px solid #00ae4a;
+            padding: 8px 5px 0px 8px;
+            border-radius: 50px;
+            cursor: pointer;
+
+            span {
+                color: #00ae4a;
+                font-size: 35px;
+            }
+
+            &:hover {
+                background-color: #00ae4a;
+
+                span {
+                    color: white;
+                }
+            }
+        }
+
+        .userButton {
+            display: flex;
+            flex-direction: column;
+
+            button {
+                width: 90px;
+                border: 1px solid #d5ffe7;
+                border-radius: 5px;
+                color: #00ae4a;
+                background-color: #d5ffe7;
+                margin: 5px 0px;
+                font-weight: bold;
+                font-family: Cambria;
+                padding: 4px 10px;
+                font-size: 12px;
+                cursor: pointer;
+
+                &:hover {
+                    border: 1px solid #00ae4a;
+                    transform: scale(1.1);
+                    transition: 0.15s ease-in-out;
+                }
+            }
+        }
+
+        .userAccount {
+            // background-color: #00ae4a;
+            border-radius: 50px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+
+            .iconDown {
+                font-size: 25px;
+            }
+        }
+    }
+
+    .optionUser {
+        background-color: #00ae4a;
+        border-radius: 10px;
+        position: absolute;
+        right: 0px;
+        top: 60px;
+        width: 245px;
+        box-shadow: 1px 1px 10px #919191;
+        padding: 10px 0px;
+
+        li {
+            color: white;
+            display: flex;
+            align-items: center;
+            list-style-type: none;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 14px;
+            padding: 4px 15px 5px 15px;
+            margin: 5px 15px;
+            border-radius: 50px;
+
+            .optionIcon {
+                font-size: 20px;
+                padding-top: 5px;
+                margin-right: 7px;
+            }
+
+            &:hover {
+                font-weight: bold;
+                transition: 0.15s ease-in-out;
+                background-color: white;
+                color: #00ae4a;
+            }
+        }
+    }
+}

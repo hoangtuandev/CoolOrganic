@@ -1,0 +1,90 @@
+* {
+    font-family: Cambria;
+}
+
+$mainColor: #00ae4a;
+
+.promptBox {
+    .backgroundBlock {
+        position: fixed;
+        padding: 100px 100px;
+        margin: -201px 0px 200px -288px;
+        margin-bottom: -50px;
+        clear: both;
+        height: 100%;
+        width: 100%;
+        z-index: 9;
+        opacity: 70%;
+        background-color: gray;
+    }
+
+    .promptDelete {
+        position: absolute;
+        top: 40%;
+        left: 42%;
+        position: fixed;
+        background-color: white;
+        padding: 0px 0px 15px 0px;
+        border-radius: 3px;
+        position: fixed;
+        box-shadow: 5px 5px 10px gray;
+        z-index: 99;
+
+        p {
+            padding: 10px 15px;
+            margin: 0px 0px 20px 0px;
+            font-weight: bold;
+            font-size: 20px;
+            color: white;
+            background-color: $mainColor;
+            text-align: center;
+            border-radius: 0px;
+        }
+
+        table {
+            font-size: 20px;
+            border-collapse: collapse;
+            padding: 0px 10px;
+            tr {
+                td {
+                    border-radius: 5px;
+                    span {
+                        padding: 0px 10px;
+                    }
+                }
+            }
+        }
+        .buttonsDelete {
+            margin: 40px 0px 0px 0px;
+            text-align: center;
+            button {
+                border: 2px solid white;
+                padding: 7px 10px;
+                width: 80px;
+                font-weight: bold;
+                cursor: pointer;
+                font-size: 16px;
+                border-radius: 5px;
+            }
+
+            .deleteButton {
+                background-color: #cefde3;
+                color: $mainColor;
+            }
+
+            .deleteButton:hover {
+                border: 2px solid $mainColor;
+            }
+
+            .cancelButton {
+                background-color: #ffdfdb;
+                color: red;
+                margin-left: 15px;
+            }
+
+            .cancelButton:hover {
+                border: 2px solid red;
+            }
+        }
+    }
+}

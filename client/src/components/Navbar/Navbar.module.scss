@@ -1,0 +1,55 @@
+$mainColor: #00ae4a;
+
+.navbar {
+    background-color: $mainColor;
+    position: fixed;
+    top: 185px;
+    left: 15px;
+    z-index: 10;
+    border-radius: 20px;
+    padding: 0px 10px;
+
+    .navbarMenu {
+        .linkRoute {
+            text-decoration: none;
+        }
+
+        .menuItem {
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            color: white;
+            padding: 10px 5px;
+            margin: 20px 0px;
+            height: 40px;
+
+            &:hover {
+                background-color: white;
+                cursor: pointer;
+                border-radius: 15px;
+                color: #00ae4a;
+
+                .itemLabel {
+                    display: none;
+                    transition: 0.25s ease-in-out;
+                }
+
+                .itemIcon {
+                    padding-top: 5px;
+                    font-size: 30px;
+                    transition: 0.25s ease-in-out;
+                }
+            }
+
+            .itemIcon {
+                font-size: 19px;
+                margin-bottom: 3px;
+            }
+
+            .itemLabel {
+                font-size: 13px;
+                font-weight: bold;
+            }
+        }
+    }
+}

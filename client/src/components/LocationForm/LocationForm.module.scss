@@ -1,0 +1,26 @@
+$mainColor: #00ae4a;
+
+form {
+    div {
+        .selectField {
+            padding-top: 100px;
+            width: 350px;
+            margin: 0px 0 35px 0;
+            font-family: monospace;
+            font-weight: bold;
+            font-size: 16px;
+            border-radius: 10px;
+            padding: 0 0;
+
+            &:focus {
+                border: 0px solid #00ae4a;
+            }
+        }
+
+        .numberPhoneFeild {
+            input {
+                margin-bottom: 35px;
+            }
+        }
+    }
+}

@@ -1,0 +1,50 @@
+$mainColor: #00ae4a;
+
+.sidebar {
+    float: left;
+    width: 17%;
+    position: fixed;
+
+    .sidebarLogo {
+        padding: 20px 0px 15px 30px;
+
+        img {
+            width: 150px;
+            height: 50px;
+        }
+    }
+    .sidebarMenu {
+        font-size: 20px;
+        margin: 30px 0px 0px 0px;
+
+        .menuItem {
+            font-size: 18px;
+            display: flex;
+            align-items: center;
+            color: black;
+            padding: 10px 10px;
+            margin: 25px 50px 15px 20px;
+            transition: ease 0.25s;
+
+            // :focus {
+            //     transform: translateY(-10px);
+            // }
+            span {
+                margin-left: 15px;
+            }
+        }
+        :hover {
+            cursor: pointer;
+            transition: ease 0.25s;
+            border-radius: 5px;
+            color: white;
+            background-color: $mainColor;
+            box-shadow: 6px 8px 3px rgb(205, 231, 205);
+            transform: translateY(-10px);
+            span {
+                box-shadow: none;
+                transform: none;
+            }
+        }
+    }
+}
